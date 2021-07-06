@@ -1,8 +1,7 @@
 $(document).on('turbolinks:load', function() {
   var calendarEl = $('#calendar')
-  if(!calendarEl) { return }
+  if(!calendarEl || calendarEl.attr('data-rendered') == 'true') { return }
 
-  calendarEl.html('')
   var calendar = calendarEl.fullCalendar({
     header: {
       left: 'prev,next today',
@@ -56,4 +55,6 @@ $(document).on('turbolinks:load', function() {
     },
     loading: function() {}
   });
+
+  calendarEl.attr('data-rendered', 'true')
 })
