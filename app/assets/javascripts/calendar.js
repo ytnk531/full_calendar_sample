@@ -1,8 +1,9 @@
 $(document).on('turbolinks:load', function() {
-  var calenderEl = $('#calendar')
-  if(!calenderEl) { return }
+  var calendarEl = $('#calendar')
+  if(!calendarEl) { return }
 
-  var calendar = calenderEl.fullCalendar({
+  calendarEl.html('')
+  var calendar = calendarEl.fullCalendar({
     header: {
       left: 'prev,next today',
       center: 'title',
